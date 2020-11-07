@@ -25,6 +25,7 @@ pip install pandas
 ## Authors
 
 * **David Li** - [GitHub](https://github.com/lidav953) - [LinkedIn](https://www.linkedin.com/in/davidli1996/)
+
 ## Motivation
 
 I wanted a straightforward way to compare the historical performance of specific stocks in my personal trading account without having to look each one up individually and manually calculate their returns. Also, this program is an easy way to teach people about the benefits and pitfalls of investing their money in the stock market.
