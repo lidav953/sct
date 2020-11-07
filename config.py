@@ -1,0 +1,1 @@
+CONSUMER_KEY = '' #Enter API Key here
