@@ -2,6 +2,7 @@ from asset_history import *
 from investments import *
 import matplotlib.pyplot as plt
 import matplotlib
+import time, datetime
 
 """
 The primary program that collects user input and shows stock performance.
@@ -62,7 +63,7 @@ def initialize_assets(tickers, start_date, end_date):
         assets.append(Asset(ticker, start_date, end_date))
     return assets
 
-def invest(assets, initial_investment):
+def invest(assets, initial_investment, start_date):
     """
     Initializes each investment with $initial_investment.
     Tracks the growth of each investment over the investment period
@@ -83,7 +84,7 @@ def invest(assets, initial_investment):
         price_data = asset.get_price_data()
         ticker = asset.get_ticker()
         initial_price = price_data.iloc[0]['open']
-        inv = Investment(ticker, initial_investment, initial_price, start_date)
+        inv = Investment(ticker, initial_investment, initial_price, datetime.datetime.strptime(start_date, '%m/%d/%Y').strftime("%x"))
 
         for index, row in asset.get_price_data().iterrows():
             inv.update_value(row['close'], row['date'])
@@ -128,6 +129,6 @@ if __name__ == "__main__":
     initial_investment = get_initial_investment()
 
     assets = initialize_assets(tickers, start_date, end_date)
-    investments = invest(assets, initial_investment)
+    investments = invest(assets, initial_investment, start_date)
     graph_history(investments, tickers)
     print_result(investments, tickers)

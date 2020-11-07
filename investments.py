@@ -2,6 +2,7 @@ import time, datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib
+import dateutil
 
 class Investment:
     """
@@ -23,7 +24,7 @@ class Investment:
         self.update_history(start_date)
 
     def __str__(self):
-        return 'Ticker: %s \n Number of Shares: %s \n Current Value: %s' % (self.ticker, self.num_shares, self.value)
+        return 'Ticker: %s \n Number of Shares: %s \n Current Value: %s \n Annualized Return: %s%%' % (self.ticker, self.num_shares, self.value, self.calculate_annual_return())
 
     def update_value(self, price, date):
         """
@@ -37,6 +38,22 @@ class Investment:
         Updates investment history.
         """
         self.history = self.history.append({'date':date, 'value':self.value}, ignore_index = True)
+    
+    def calculate_annual_return(self):
+        """
+        Calculates the average annualized return of the investment throughout its history.
+        """
+
+        start_date = datetime.datetime.strptime(self.history.iloc[0]['date'], '%m/%d/%y')
+        end_date = datetime.datetime.strptime(self.history.iloc[-1]['date'], '%m/%d/%y')
+        date_diff = dateutil.relativedelta.relativedelta(end_date, start_date)
+        num_years = date_diff.years + date_diff.months/12 + (date_diff.days+1)/365.2425
+
+        start_value = self.history.iloc[0]['value']
+        end_value = self.history.iloc[-1]['value']
+        total_return = (end_value - start_value)/(start_value)
+
+        return (((1+total_return)**(1/num_years))-1)*100
 
     def get_shares(self):
         """
