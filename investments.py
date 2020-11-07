@@ -24,7 +24,7 @@ class Investment:
         self.update_history(start_date)
 
     def __str__(self):
-        return 'Ticker: %s \n Number of Shares: %s \n Current Value: %s \n Annualized Return: %s%%' % (self.ticker, self.num_shares, self.value, self.calculate_annual_return())
+        return 'Ticker: %s \n Number of Shares: %s \n Current Value: $%s \n Annualized Return: %s%%' % (self.ticker, '{:.2f}'.format(self.num_shares), '{:.2f}'.format(self.value), '{:.2f}'.format(self.calculate_annual_return()))
 
     def update_value(self, price, date):
         """
