@@ -1,6 +1,6 @@
 # Stock Performance Analyzer
 
-This Stock Performance Analyzer will compare the returns of any stock/etf contained in the TD Ameritrade database.
+The Stock Performance Analyzer compares the returns of any stock/etf contained in the TD Ameritrade database.
 
 ## Usage
 
