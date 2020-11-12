@@ -1,12 +1,12 @@
-# Stock Comparison Tool
+# Stock Performance Analyzer
 
-This Stock Comparison Tool will compare the returns of any stock/etf contained in the TD Ameritrade database.
+This Stock Performance Analyzer will compare the returns of any stock/etf contained in the TD Ameritrade database.
 
 ## Usage
 
-Given any number of stock/etfs, an investment period, and an initial investment amount (in dollars), the Stock Comparison Tool will graph and analyze the return of each stock/etf over the investment period. This helps users visualize how profitable investing in the stock market, or a specific asset, would have been in the past.
+Given any number of stock/etfs, an investment period, and an initial investment amount (in dollars), the Stock Performance Analyzer will graph and analyze the return of each stock/etf over the investment period. This helps users visualize how profitable investing in the stock market, or a specific asset, would have been in the past.
 
-Note: The Stock Comparison Tool does not yet account for dividends.
+Note: The Stock Performance Analyzer does not yet account for dividends.
 
 ## Getting Started
 
