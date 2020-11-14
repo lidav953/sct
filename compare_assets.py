@@ -1,12 +1,12 @@
+"""
+The primary program that collects user input and shows stock performance.
+"""
+
 from asset_history import *
 from investments import *
 import matplotlib.pyplot as plt
 import matplotlib
 import time, datetime
-
-"""
-The primary program that collects user input and shows stock performance.
-"""
 
 def get_tickers():
     """
